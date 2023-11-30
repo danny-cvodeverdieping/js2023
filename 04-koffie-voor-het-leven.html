@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+    </style>
+    <script type="text/javascript">
+    function ingeven() {
+        let geboortejaar = prompt("Wat is je geboortejaar?");
+        let maxLeeftijd = prompt("Hoe oud denk je te worden?");
+        let aantalPerDag = prompt("Hoeveel koppen koffie drink je per dag?");
+
+        if (geboortejaar == null || maxLeeftijd == null || aantalPerDag == null) {
+            document.write("<p>U heeft geannuleerd!");
+        } else if (geboortejaar.length == 0 || maxLeeftijd.length == 0 || aantalPerDag.length == 0) {
+            document.write("<p>U heeft niet alles ingegeven!");
+        } else if (isNaN(geboortejaar) || isNaN(maxLeeftijd) || isNaN(aantalPerDag)) {
+            document.write('<p>Het zijn niet allemaal nummers!</p>');
+        } else {
+            tonen(geboortejaar, maxLeeftijd, aantalPerDag)
+        }
+    }
+
+    function tonen(geboortejaar, maxLeeftijd, aantalPerDag) {
+        let geboortejaar = parseInt(geboortejaar);
+        let maxLeeftijd = parseInt(maxLeeftijd);
+        let aantalPerDag = parseInt(aantalPerDag);
+
+        let datum = new Date();
+        let huidigJaar = datum.getFullYear();
+        let ouderdom = huidigJaar - geboortejaar;
+        console.log(huidigJaar, ouderdom);
+
+        let totaalNodig = (aantalPerDag * 365) * (maxLeeftijd - ouderdom);
+        let message = 'Je bent nu ' + ouderdom + '. Tegen ' + aantalPerDag + ' koppen koffie per dag zal je ' + totaalNodig + ' koppen koffie drinken als je ' + maxLeeftijd + " jaar oud zal worden.";
+        document.write(message);
+    }
+
+    ingeven();
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

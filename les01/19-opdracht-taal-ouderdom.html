@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    </style>
+    <script language="javascript">
+/*
+Declareer een variabele taal
+In het volgende statement initialiseer je de variabele met de inhoud: spaans
+Schrijf een paragraaf met de tekst "De taal is nu: " met de variabele taal er achter.
+Verander de variabele taal naar : "nederlands"
+Schrijf opnieuw een paragraaf met de tekst "De taal is nu: " met de variabele taal er achter.
+Vraag aan de gebruiker: "Hou oud ben je nu?" en bewaar zijn antwoord.
+Schrijf een paragraaf met de tekst "Dan wordt je volgend jaar: " met de variabele ouderdom er achter. In de document.write verhoog je de ouderdom met 1.
+*/
+let taal;
+taal= "spaans";
+document.write(`<p>De taal is nu: ${taal}</p>`);
+taal="nederlands";
+document.write(`<p>De taal is nu: ${taal}</p>`);
+let ouderdom = prompt("Hoe oud ben je nu?");
+document.write(`<p>Dan wordt je volgend jaar: ${++ouderdom}</p>`);
+//ouderdom++
+//ouderdom =ouderdom +1
+
+// of als je ouderdom niet wil aanpassen:
+document.write(`<p>Dan wordt je volgend jaar: ${ouderdom + 1}</p>`);
+console.log(ouderdom);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

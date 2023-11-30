@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    /*
+        Maak een array met 4 voornamen.
+        Vraag aan de gebruiker de hoeveelste naam hij wil kiezen uit de array, toon deze array ook in de vraag. 
+        Schrijf vervolgens de naam in het document:
+        U koos voor Joris 
+        */
+
+    let voornamen = ["Jan", "Piet", "Joris", "Korneel"];
+    let keuze = prompt(`De hoeveelste naam wil u kiezen uit ${voornamen}?`, 3);
+    document.write(`<p>U koos voor ${voornamen[keuze - 1]}</p>`);
+
+    /*
+    Vraag aan de gebruiker welke naam hij wil verwijderen.
+    Zoek op hoe je een element uit een array verwijderd.
+    Verwijder het gevraagde element.
+    Toon de resterende array in het document.
+    */
+    let verwijder = prompt(`Geef de nummer van de naam die u wil verwijderen uit ${voornamen}`, 2);
+    //splice(positie, aantal)
+    voornamen.splice(verwijder - 1, 1);
+    document.write(`<p>${voornamen}</p>`);
+    </script>
+</body>
+
+</html>

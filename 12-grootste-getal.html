@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script language="JavaScript" type="text/javascript">
+    const scores = new Array(30, 410, 10, 490);
+    const lengte = scores.length;
+    let max = scores[0];
+    let plaats = 0;
+    /*begin met te zeggen dat het grootste getal het eerste getal van de aray is, op positie 0*/
+
+    for (let i = 1; i < lengte; i++) {
+        /*dus niet vertrekken van 0, want die heb je al */
+        if (scores[i] > max) {
+            max = scores[i];
+            plaats = i;
+        }
+    }
+    document.write("Het grootste getal: " + max + " staat in de array op de plaats: " + plaats);
+    /*
+    let i=1 want de 0 positie heb je al gebruikt om de variabele in te vullen
+    */
+    </script>
+    </body>
+
+</html>

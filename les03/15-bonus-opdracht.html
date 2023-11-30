@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script language="JavaScript" type="text/javascript">
+    /*
+        1
+        Vraag de voornaam op.
+        Vraag de achternaam op.
+        Zorg dat de voornaam variabele begint met een hoofdletter.
+        Zorg dat de achternaam variabele begint met een hoofdletter.
+        Druk beide af in het document:
+        Je naam is: 'Java Script'
+
+        */
+    let voornaam = prompt("Geef je voornaam in.", "java");
+    let achternaam = prompt("Geef je achternaam in.", "script");
+    voornaam = `${voornaam.charAt(0).toUpperCase()}${voornaam.substring(1, voornaam.length)}`;
+    achternaam = `${achternaam.charAt(0).toUpperCase()}${achternaam.substring(1, achternaam.length)}`;
+
+    document.write(`<p>Je naam is: '${voornaam} ${achternaam}'</p>`);
+
+    /*
+    1
+    Vraag een tekst op.
+    Vraag een te zoeken tekst op.
+    Zoek in de eerste tekst naar de te zoeken tekst en geef de positie aan.
+    In de tekst 'Hallo wereld, dit is JavaScript!' begint de te zoeken tekst 'JavaScript' op positie 21 
+    */
+    let tekst = prompt("Geef de tekst in:", "Hallo wereld, dit is JavaScript!");
+    let teZoekenTekst = prompt("Geef de te zoeken tekst in", "JavaScript");
+    let positie = tekst.indexOf(teZoekenTekst);
+    document.write(`<p>In de tekst '${tekst}' begint de te zoeken tekst '${teZoekenTekst}' op positie ${positie}</p>`);
+
+    /*
+    3
+    In een tekst staat een postcode '1000' en de woonplaats 'Brussel'. Het is echter nooit zeker op welke plaats in de tekst deze staan. Deze moeten dus gezocht worden.
+    Schrijf in het document:
+    In de tekst 'Hij woont in de postcode 1000, te Brussel.' begint '1000' op positie 25 en 'Brussel' op positie 34
+        
+    Vervang dan 1000 en Brussel door 'xxxx'. Hou er rekening mee dat de zin kan veranderen, langer of korter kan worden.
+    Schrijf in het document:
+    De gecensureerde zin is dan: Hij woont in de postcode xxxx, te xxxx. 
+    */
+
+    let zin = "Hij woont in de postcode 1000, te Brussel.";
+    let positiePostcode = zin.indexOf('1000');
+    let positieWoonplaats = zin.indexOf('Brussel');
+    document.write(`<p>In de tekst '${zin}' begint '1000' op positie ${positiePostcode} en 'Brussel' op positie ${positieWoonplaats} </p>`);
+    zin = `${zin.substring(0, positiePostcode)}xxxx${zin.substring(positiePostcode + 4, positieWoonplaats)}xxxx${zin.substring(positieWoonplaats + 7, zin.length)}`;
+    document.write(`<p>De gecensureerde zin is dan: ${zin}`);
+
+    /*
+    4
+    Zoek in een tekst het tweede voorkomen van 'de'.
+    In de tekst 'JavaScript is de belangrijkste scriptingtaal voor het web. De taal bestaat al sinds 1995 en werd uitgevonden door Brendan Eich voor gebruik in de webbrowser Netscape 2 staat de tweede 'de' volgens JavaScript op positie 105
+    */
+
+    let tekst2 = "JavaScript is de belangrijkste scriptingtaal voor het web. De taal bestaat al sinds 1995 en werd uitgevonden door  Brendan Eich voor gebruik in de webbrowser Netscape 2";
+    let eersteDe = tekst2.indexOf("de");
+    let tweedeDe = tekst2.indexOf("de", ++eersteDe);
+    document.write(`<p>In de tekst '${tekst2} staat de tweede 'de' volgens JavaScript op positie ${tweedeDe}</p>`);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
